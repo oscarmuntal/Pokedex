@@ -11,7 +11,8 @@ import Viperit
 
 class SearchPokemonRouter: Router {
     
-    func searchPokemon(fromVC: UIViewController) {
+    func searchPokemon(fromVC: UIViewController, backPackRealm: BackPackRealm) {
+        presenter.backPackRealm = backPackRealm
         guard let vc = self.presenter._view else { return }
         fromVC.show(vc, sender: nil)
     }

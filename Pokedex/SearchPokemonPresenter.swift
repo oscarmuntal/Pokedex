@@ -12,6 +12,20 @@ import Viperit
 class SearchPokemonPresenter: Presenter {
     
     var pokemon: Pokemon?
+    var backPackRealm: BackPackRealm!
+    
+    func saveButtonAction(onSuccess: VoidClosure, onFail: VoidClosure) {
+        savePokemon(onSuccess: onSuccess, onFail: onFail)
+    }
+    
+    func savePokemon(onSuccess: VoidClosure, onFail: VoidClosure) {
+        guard let pokemon = self.pokemon else { return }
+        if self.backPackRealm.savePokemon(pokemon) {
+            onSuccess()
+        } else {
+            onFail()
+        }
+    }
     
     func fetchPokemon(updateUI: @escaping ObjectClosure<Pokemon>, failFetchPokemon: @escaping VoidClosure) {
         let id = getPokemonId()
@@ -37,6 +51,7 @@ class SearchPokemonPresenter: Presenter {
     func getPokemonId() -> Int {
         return Int(arc4random_uniform(1000)) + 1
     }
+    
 }
 
 

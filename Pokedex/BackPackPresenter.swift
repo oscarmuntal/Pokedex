@@ -11,6 +11,16 @@ import Viperit
 
 class BackPackPresenter: Presenter {
     
+    var backPackRealm: BackPackRealm!
+    
+    func initBackPack(_ backPackRealm: BackPackRealm?) {
+        if let bpr = backPackRealm {
+            self.backPackRealm = bpr
+        } else {
+            self.backPackRealm = BackPackRealm()
+        }
+    }
+    
     func search() {
         router.searchPokemon()
     }

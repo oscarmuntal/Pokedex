@@ -8,6 +8,7 @@
 
 import UIKit
 import Viperit
+import RealmSwift
 
 //MARK: - Public Interface Protocol
 protocol BackPackViewInterface {
@@ -23,7 +24,21 @@ final class BackPackView: UserInterface {
         presenter.search()
     }
     
+    fileprivate var backPackRealm: Results<BackPackRealm> {
+        get {
+            let realm = try! Realm()
+            let backPack: Results<BackPackRealm> = realm.objects(BackPackRealm.self)
+            return backPack
+        }
+    }
+    
     let reuseIdentifier = "cell"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.initBackPack(backPackRealm.first)
+        
+    }
 }
 
 

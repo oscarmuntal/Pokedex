@@ -15,7 +15,7 @@ class BackPackRouter: Router {
         guard let searchRouter = AppModules.SearchPokemon.build().router as? SearchPokemonRouter,
             let vc = self.presenter._view else { return }
         
-        searchRouter.searchPokemon(fromVC: vc)
+        searchRouter.searchPokemon(fromVC: vc, backPackRealm: presenter.backPackRealm)
     }
 }
 

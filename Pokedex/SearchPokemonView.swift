@@ -32,7 +32,11 @@ final class SearchPokemonView: UserInterface {
     }
     
     @IBAction func saveButtonAction(_ sender: Any) {
-        
+        self.presenter.saveButtonAction(onSuccess: { () -> (Void) in
+            showSuccessAlert()
+        }) { () -> (Void) in
+            showFailAlert()
+        }
     }
 
     
