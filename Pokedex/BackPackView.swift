@@ -40,6 +40,7 @@ final class BackPackView: UserInterface {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        setupUI()
         reloadData()
     }
     
@@ -91,7 +92,13 @@ extension BackPackView: BackPackViewInterface {
     
     func setupUI() {
         emptyListLabel.text = displayData.emptyListText
+        
+        guard let pokemons = backPackRealm.first?.pokemons else {
+            emptyListLabel.isHidden = false
+            return
+        }
         emptyListLabel.isHidden = backPackRealm.first?.pokemons.count != 0
+        
     }
 }
 

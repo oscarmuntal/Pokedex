@@ -32,13 +32,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pcz-jc-eVn">
-                                <rect key="frame" x="16" y="95" width="343" height="200"/>
+                                <rect key="frame" x="16" y="115" width="343" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="o8M-zA-r5i"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="apR-rX-E08">
-                                <rect key="frame" x="0.0" y="315" width="375" height="276"/>
+                                <rect key="frame" x="0.0" y="345" width="375" height="246"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="xqD-av-Raz" id="MhR-rN-FPl"/>
@@ -58,7 +58,7 @@
                         <constraints>
                             <constraint firstItem="yo0-AF-Fqz" firstAttribute="top" secondItem="apR-rX-E08" secondAttribute="bottom" constant="20" id="Lp3-Eb-Muj"/>
                             <constraint firstItem="yo0-AF-Fqz" firstAttribute="leading" secondItem="Lb5-tf-7Md" secondAttribute="leadingMargin" constant="20" id="PLd-K3-iZI"/>
-                            <constraint firstItem="apR-rX-E08" firstAttribute="top" secondItem="Pcz-jc-eVn" secondAttribute="bottom" constant="20" id="XJk-iX-xh6"/>
+                            <constraint firstItem="apR-rX-E08" firstAttribute="top" secondItem="Pcz-jc-eVn" secondAttribute="bottom" constant="30" id="XJk-iX-xh6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pcz-jc-eVn" secondAttribute="trailing" id="a8Y-C4-vTR"/>
                             <constraint firstItem="Eta-0B-uhu" firstAttribute="top" secondItem="EcR-ye-kTk" secondAttribute="bottom" constant="20" id="gib-6p-DG0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Eta-0B-uhu" secondAttribute="trailing" id="kYi-Lx-A4r"/>
@@ -66,7 +66,7 @@
                             <constraint firstItem="apR-rX-E08" firstAttribute="leading" secondItem="Lb5-tf-7Md" secondAttribute="leadingMargin" constant="-16" id="n2r-0S-zBP"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Pcz-jc-eVn" secondAttribute="leading" id="nwD-JX-dcm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yo0-AF-Fqz" secondAttribute="trailing" constant="20" id="qCT-27-Nu6"/>
-                            <constraint firstItem="Pcz-jc-eVn" firstAttribute="top" secondItem="Eta-0B-uhu" secondAttribute="bottom" constant="20" id="rQU-uc-mum"/>
+                            <constraint firstItem="Pcz-jc-eVn" firstAttribute="top" secondItem="Eta-0B-uhu" secondAttribute="bottom" constant="40" id="rQU-uc-mum"/>
                             <constraint firstAttribute="trailingMargin" secondItem="apR-rX-E08" secondAttribute="trailing" constant="-16" id="tND-fQ-c1V"/>
                             <constraint firstItem="vb6-4r-Epx" firstAttribute="top" secondItem="yo0-AF-Fqz" secondAttribute="bottom" constant="20" id="u7r-aN-I0D"/>
                         </constraints>
