@@ -11,7 +11,7 @@ import Viperit
 
 //MARK: - Application modules
 enum AppModules: String, ViperitModule {
-    case MyFirstModule
-    case MySecondModule
-    case MyThirdModule
+    case BackPack
+    case SearchPokemon
+    case PokemonDetail
 }

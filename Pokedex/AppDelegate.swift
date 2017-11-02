@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let module = AppModules.BackPack.build()
+        module.router.show(inWindow: window)
+        
         // Defining the Schema version for Migration
         let config = Realm.Configuration(
             schemaVersion: 0,
