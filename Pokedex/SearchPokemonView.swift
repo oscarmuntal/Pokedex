@@ -16,7 +16,25 @@ protocol SearchPokemonViewInterface {
 //MARK: SearchPokemonView Class
 final class SearchPokemonView: UserInterface {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var pokemonImage: UIImageView!
+    @IBOutlet weak var heightLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
     
+    @IBOutlet weak var searchingLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    @IBAction func cancelButtonAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButtonAction(_ sender: Any) {
+        
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         fetchPokemon()
