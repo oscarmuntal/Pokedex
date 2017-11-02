@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eta-0B-uhu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eta-0B-uhu">
                                 <rect key="frame" x="16" y="40" width="343" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="1fb-pM-b3h"/>
@@ -31,13 +31,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pcz-jc-eVn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pcz-jc-eVn">
                                 <rect key="frame" x="16" y="95" width="343" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="o8M-zA-r5i"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="apR-rX-E08">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="apR-rX-E08">
                                 <rect key="frame" x="0.0" y="315" width="375" height="276"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -45,7 +45,7 @@
                                     <outlet property="delegate" destination="xqD-av-Raz" id="zAu-vx-dPX"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yo0-AF-Fqz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yo0-AF-Fqz">
                                 <rect key="frame" x="36" y="611" width="303" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Back to BackPack"/>
@@ -60,6 +60,7 @@
                             <constraint firstItem="yo0-AF-Fqz" firstAttribute="leading" secondItem="Lb5-tf-7Md" secondAttribute="leadingMargin" constant="20" id="PLd-K3-iZI"/>
                             <constraint firstItem="apR-rX-E08" firstAttribute="top" secondItem="Pcz-jc-eVn" secondAttribute="bottom" constant="20" id="XJk-iX-xh6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pcz-jc-eVn" secondAttribute="trailing" id="a8Y-C4-vTR"/>
+                            <constraint firstItem="Eta-0B-uhu" firstAttribute="top" secondItem="EcR-ye-kTk" secondAttribute="bottom" constant="20" id="gib-6p-DG0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Eta-0B-uhu" secondAttribute="trailing" id="kYi-Lx-A4r"/>
                             <constraint firstItem="Eta-0B-uhu" firstAttribute="leading" secondItem="Lb5-tf-7Md" secondAttribute="leadingMargin" id="mmF-Ip-fe3"/>
                             <constraint firstItem="apR-rX-E08" firstAttribute="leading" secondItem="Lb5-tf-7Md" secondAttribute="leadingMargin" constant="-16" id="n2r-0S-zBP"/>
@@ -67,6 +68,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="yo0-AF-Fqz" secondAttribute="trailing" constant="20" id="qCT-27-Nu6"/>
                             <constraint firstItem="Pcz-jc-eVn" firstAttribute="top" secondItem="Eta-0B-uhu" secondAttribute="bottom" constant="20" id="rQU-uc-mum"/>
                             <constraint firstAttribute="trailingMargin" secondItem="apR-rX-E08" secondAttribute="trailing" constant="-16" id="tND-fQ-c1V"/>
+                            <constraint firstItem="vb6-4r-Epx" firstAttribute="top" secondItem="yo0-AF-Fqz" secondAttribute="bottom" constant="20" id="u7r-aN-I0D"/>
                         </constraints>
                     </view>
                     <connections>

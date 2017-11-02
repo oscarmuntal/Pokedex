@@ -11,6 +11,13 @@ import Viperit
 
 class BackPackRouter: Router {
     
+    func showPokemonDetail(pokemon: Pokemon) {
+        guard let detailRouter = AppModules.PokemonDetail.build().router as? PokemonDetailRouter,
+            let vc = self.presenter._view else { return }
+        
+        detailRouter.showPokemonDetail(pokemon: pokemon, fromVC: vc)
+    }
+    
     func searchPokemon() {
         guard let searchRouter = AppModules.SearchPokemon.build().router as? SearchPokemonRouter,
             let vc = self.presenter._view else { return }

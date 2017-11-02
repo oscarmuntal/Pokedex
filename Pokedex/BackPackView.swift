@@ -52,7 +52,9 @@ final class BackPackView: UserInterface {
 extension BackPackView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        guard let backPack = backPackRealm.first else { return }
+        let pokemon = backPack.pokemons[indexPath.row]
+        presenter.onPokemonTapped(pokemon: pokemon)
     }
     
 }

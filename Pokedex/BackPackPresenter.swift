@@ -22,6 +22,10 @@ class BackPackPresenter: Presenter {
         }
     }
     
+    func onPokemonTapped(pokemon: Pokemon) {
+        router.showPokemonDetail(pokemon: pokemon)
+    }
+    
     func search() {
         router.searchPokemon()
     }

@@ -10,6 +10,7 @@ import Foundation
 import Viperit
 
 class PokemonDetailPresenter: Presenter {
+    var pokemon: Pokemon?
 }
 
 
