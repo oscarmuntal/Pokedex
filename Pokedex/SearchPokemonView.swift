@@ -69,9 +69,9 @@ extension SearchPokemonView: SearchPokemonViewInterface {
         presenter.fetchPokemon(updateUI: { pokemon in
             self.setupUI(pokemon)
             self.hideLoader()
-            
+            self.checkIsRepeated(pokemon)
         }) { () -> (Void) in
-            
+            self.showFailAlert()
         }
     }
     
@@ -134,6 +134,14 @@ extension SearchPokemonView: SearchPokemonViewInterface {
         }))
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func checkIsRepeated(_ pokemon: Pokemon) {
+        for myPokemon in presenter.backPackRealm.pokemons {
+            if myPokemon.id == pokemon.id {
+                showRepeatedPokemonAlert()
+            }
+        }
     }
 }
 
