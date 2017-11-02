@@ -94,6 +94,34 @@ extension SearchPokemonView: SearchPokemonViewInterface {
         saveButton.isEnabled = true
     }
     
+    func showSuccessAlert(){
+        showAlert(message: displayData.successMessage, okButton: displayData.okButton, cancelButton: displayData.cancelButton)
+    }
+    
+    func showFailAlert() {
+        showAlert(message: displayData.failMessage, okButton: displayData.okButton, cancelButton: displayData.cancelButton)
+        
+    }
+    
+    func showRepeatedPokemonAlert() {
+        showAlert(message: displayData.repeatedPokemonMessage, okButton: displayData.okButton, cancelButton: displayData.cancelButton)
+    }
+    
+    func showAlert(message: String, okButton: String, cancelButton: String) {
+        let alertController = UIAlertController(title: message, message:
+            "", preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        alertController.addAction(UIAlertAction(title: okButton, style: UIAlertActionStyle.default,handler: { (action: UIAlertAction!) in
+            self.fetchPokemon()
+        }))
+        
+        alertController.addAction(UIAlertAction(title: cancelButton, style: UIAlertActionStyle.default,handler: { (action: UIAlertAction!) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 // MARK: - VIPER COMPONENTS API (Auto-generated code)
