@@ -53,7 +53,11 @@ extension BackPackView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let backPack = backPackRealm.first else { return }
-        let pokemon = backPack.pokemons[indexPath.row]
+        
+        let sortedPokemons = backPack.pokemons.sorted{
+            return $0.order < $1.order
+        }
+        let pokemon = sortedPokemons[indexPath.row]
         presenter.onPokemonTapped(pokemon: pokemon)
     }
     
