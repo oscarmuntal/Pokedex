@@ -1,26 +1,83 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Pokemon Detail View-->
         <scene sceneID="htw-l1-ahc">
             <objects>
-                <viewController storyboardIdentifier="PokemonDetailView" id="xqD-av-Raz" customClass="PokemonDetailView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PokemonDetailView" id="xqD-av-Raz" customClass="PokemonDetailView" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EcR-ye-kTk"/>
                         <viewControllerLayoutGuide type="bottom" id="vb6-4r-Epx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kgt-o0-aP8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="Lb5-tf-7Md">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eta-0B-uhu">
+                                <rect key="frame" x="16" y="40" width="343" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="1fb-pM-b3h"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pcz-jc-eVn">
+                                <rect key="frame" x="16" y="95" width="343" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="o8M-zA-r5i"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="apR-rX-E08">
+                                <rect key="frame" x="0.0" y="315" width="375" height="276"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xqD-av-Raz" id="MhR-rN-FPl"/>
+                                    <outlet property="delegate" destination="xqD-av-Raz" id="zAu-vx-dPX"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yo0-AF-Fqz">
+                                <rect key="frame" x="36" y="611" width="303" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Back to BackPack"/>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="xqD-av-Raz" eventType="touchUpInside" id="Ndy-vG-Sev"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="yo0-AF-Fqz" firstAttribute="top" secondItem="apR-rX-E08" secondAttribute="bottom" constant="20" id="Lp3-Eb-Muj"/>
+                            <constraint firstItem="yo0-AF-Fqz" firstAttribute="leading" secondItem="Lb5-tf-7Md" secondAttribute="leadingMargin" constant="20" id="PLd-K3-iZI"/>
+                            <constraint firstItem="apR-rX-E08" firstAttribute="top" secondItem="Pcz-jc-eVn" secondAttribute="bottom" constant="20" id="XJk-iX-xh6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pcz-jc-eVn" secondAttribute="trailing" id="a8Y-C4-vTR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Eta-0B-uhu" secondAttribute="trailing" id="kYi-Lx-A4r"/>
+                            <constraint firstItem="Eta-0B-uhu" firstAttribute="leading" secondItem="Lb5-tf-7Md" secondAttribute="leadingMargin" id="mmF-Ip-fe3"/>
+                            <constraint firstItem="apR-rX-E08" firstAttribute="leading" secondItem="Lb5-tf-7Md" secondAttribute="leadingMargin" constant="-16" id="n2r-0S-zBP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Pcz-jc-eVn" secondAttribute="leading" id="nwD-JX-dcm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yo0-AF-Fqz" secondAttribute="trailing" constant="20" id="qCT-27-Nu6"/>
+                            <constraint firstItem="Pcz-jc-eVn" firstAttribute="top" secondItem="Eta-0B-uhu" secondAttribute="bottom" constant="20" id="rQU-uc-mum"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="apR-rX-E08" secondAttribute="trailing" constant="-16" id="tND-fQ-c1V"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pokemonDetailsTableView" destination="apR-rX-E08" id="Vmj-cr-KKH"/>
+                        <outlet property="pokemonImage" destination="Pcz-jc-eVn" id="5s9-iX-2tq"/>
+                        <outlet property="pokemonName" destination="Eta-0B-uhu" id="ddk-Jr-2z1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nXm-AG-NXG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="295" y="356"/>
         </scene>
     </scenes>
-    <scenes/>
 </document>

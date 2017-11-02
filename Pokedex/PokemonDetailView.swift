@@ -15,6 +15,15 @@ protocol PokemonDetailViewInterface {
 
 //MARK: PokemonDetailView Class
 final class PokemonDetailView: UserInterface {
+    
+    @IBOutlet weak var pokemonName: UILabel!
+    @IBOutlet weak var pokemonImage: UIImageView!
+    @IBOutlet weak var pokemonDetailsTableView: UITableView!
+    
+    @IBAction func backButtonAction(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 //MARK: - Public interface
