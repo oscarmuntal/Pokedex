@@ -52,12 +52,46 @@ extension SearchPokemonView: SearchPokemonViewInterface {
     
     
     func fetchPokemon() {
+        self.showLoader()
         presenter.fetchPokemon(updateUI: { pokemon in
             self.setupUI(pokemon)
+            self.hideLoader()
             
         }) { () -> (Void) in
             
         }
+    }
+    
+    func showLoader() {
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        disableButtons()
+        showSearchingLabel()
+    }
+    
+    func hideLoader() {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
+        enableButtons()
+        hideSearchingLabel()
+    }
+    
+    func showSearchingLabel() {
+        searchingLabel.isHidden = false
+    }
+    
+    func hideSearchingLabel() {
+        searchingLabel.isHidden = true
+    }
+    
+    func disableButtons() {
+        cancelButton.isEnabled = false
+        saveButton.isEnabled = false
+    }
+    
+    func enableButtons() {
+        cancelButton.isEnabled = true
+        saveButton.isEnabled = true
     }
     
 }
