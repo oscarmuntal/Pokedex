@@ -10,6 +10,11 @@ import Foundation
 import Viperit
 
 class SearchPokemonRouter: Router {
+    
+    func searchPokemon(fromVC: UIViewController) {
+        guard let vc = self.presenter._view else { return }
+        fromVC.show(vc, sender: nil)
+    }
 }
 
 // MARK: - VIPER COMPONENTS API (Auto-generated code)

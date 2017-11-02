@@ -10,6 +10,10 @@ import Foundation
 import Viperit
 
 class BackPackPresenter: Presenter {
+    
+    func search() {
+        router.searchPokemon()
+    }
 }
 
 

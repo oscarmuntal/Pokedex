@@ -20,7 +20,7 @@ final class BackPackView: UserInterface {
     @IBOutlet weak var emptyListLabel: UILabel!
     
     @IBAction func searchButtonAction(_ sender: Any) {
-    
+        presenter.search()
     }
     
     let reuseIdentifier = "cell"
