@@ -10,5 +10,5 @@ import Foundation
 import Viperit
 
 class BackPackDisplayData: DisplayData {
-
+    let emptyListText: String = "There are no Pokemons in your backpack yet. Let's get some!"
 }

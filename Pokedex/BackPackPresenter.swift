@@ -8,6 +8,7 @@
 
 import Foundation
 import Viperit
+import RealmSwift
 
 class BackPackPresenter: Presenter {
     

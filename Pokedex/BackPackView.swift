@@ -37,7 +37,14 @@ final class BackPackView: UserInterface {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.initBackPack(backPackRealm.first)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        reloadData()
+    }
+    
+    func reloadData() {
+        collectionView.reloadData()
     }
 }
 
@@ -45,7 +52,7 @@ final class BackPackView: UserInterface {
 extension BackPackView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TO DO
+        
     }
     
 }
@@ -54,12 +61,20 @@ extension BackPackView: UICollectionViewDataSource, UICollectionViewDelegateFlow
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //TO DO
-        return 0
+        return backPackRealm.first?.pokemons.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
+        guard let backPackObject = backPackRealm.first
+            else { return UICollectionViewCell() }
+        
+        let sortedPokemons = backPackObject.pokemons.sorted{
+            return $0.order < $1.order
+        }
+        
+        cell.configure(pokemon: sortedPokemons[indexPath.row])
         
         return cell
     }
@@ -68,6 +83,11 @@ extension BackPackView: UICollectionViewDataSource, UICollectionViewDelegateFlow
 
 //MARK: - Public interface
 extension BackPackView: BackPackViewInterface {
+    
+    func setupUI() {
+        emptyListLabel.text = displayData.emptyListText
+        emptyListLabel.isHidden = backPackRealm.first?.pokemons.count != 0
+    }
 }
 
 // MARK: - VIPER COMPONENTS API (Auto-generated code)
