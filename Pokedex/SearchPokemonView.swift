@@ -48,12 +48,21 @@ final class SearchPokemonView: UserInterface {
         nameLabel.text = pokemon.name
         heightLabel.text = "Height: \(pokemon.height)"
         weightLabel.text = "Height: \(pokemon.weight)"
+        setImage(pokemon.image)
     }
 }
 
 //MARK: - Public interface
 extension SearchPokemonView: SearchPokemonViewInterface {
     
+    func setImage(_ url: String) {
+        pokemonImage.image = UIImage(named: "placeholder_image")
+        pokemonImage.contentMode = .center
+        pokemonImage.backgroundColor = UIColor.lightGray
+        pokemonImage.sd_setImage(with: URL(string: url), completed: { [weak self] (image, error, cacheType, url) in
+            self?.pokemonImage.contentMode = .scaleAspectFill
+        })
+    }
     
     func fetchPokemon() {
         self.showLoader()
