@@ -66,7 +66,6 @@ extension BackPackView: UICollectionViewDelegate {
 extension BackPackView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //TO DO
         return backPackRealm.first?.pokemons.count ?? 0
     }
     

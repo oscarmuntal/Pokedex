@@ -80,6 +80,7 @@ extension SearchPokemonView: SearchPokemonViewInterface {
         activityIndicator.isHidden = false
         disableButtons()
         showSearchingLabel()
+        removePokemonInfoFromScreen()
     }
     
     func hideLoader() {
@@ -87,6 +88,7 @@ extension SearchPokemonView: SearchPokemonViewInterface {
         activityIndicator.isHidden = true
         enableButtons()
         hideSearchingLabel()
+        showPokemonInfoFromScreen()
     }
     
     func showSearchingLabel() {
@@ -142,6 +144,18 @@ extension SearchPokemonView: SearchPokemonViewInterface {
                 showRepeatedPokemonAlert()
             }
         }
+    }
+    
+    func removePokemonInfoFromScreen() {
+        nameLabel.text = ""
+        heightLabel.text = ""
+        weightLabel.text = ""
+        pokemonImage.image = nil
+        pokemonImage.isHidden = true
+    }
+    
+    func showPokemonInfoFromScreen() {
+        pokemonImage.isHidden = false
     }
 }
 
