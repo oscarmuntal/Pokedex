@@ -7,7 +7,9 @@ target 'Pokedex' do
 
   pod 'Viperit', '0.8.0'
   pod 'RealmSwift'
-
+  pod 'Alamofire', '~> 4.3'
+  pod 'SwiftyJSON'
+  
   target 'PokedexTests' do
     inherit! :search_paths
     # Pods for testing

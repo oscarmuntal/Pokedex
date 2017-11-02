@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Pokedex.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -29,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Viperit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>22C5069C484A5B1473E3164A668039FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23F022B950972F4AF2B9B73B933DDA18</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>70EB06D0F9ADF0017BB88953E0C15192</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7D2EA45B14307792A70654213FE30D4F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9428B06B7EB84618B10133A1C06CBA01</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B562E429EBCB4DE96454E151F80DF987</key>
+		<key>AEEF99EAC53CC477BBB602B58E54063F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D56CC5D3B370B826F8D4CB28344A0F3B</key>
+		<key>E6C50CFD0CC78E4A8404A187FDAE7B63</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F072CC8B1BC9FF86D5D6CF43521C15EC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F4C608A27C2DE04FCC665D8051040544</key>
 		<dict>
 			<key>primary</key>
 			<true/>
