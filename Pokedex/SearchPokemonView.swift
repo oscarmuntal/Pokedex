@@ -39,18 +39,27 @@ final class SearchPokemonView: UserInterface {
     override func viewWillAppear(_ animated: Bool) {
         fetchPokemon()
     }
+    
+    func setupUI(_ pokemon: Pokemon) {
+        nameLabel.text = pokemon.name
+        heightLabel.text = "Height: \(pokemon.height)"
+        weightLabel.text = "Height: \(pokemon.weight)"
+    }
 }
 
 //MARK: - Public interface
 extension SearchPokemonView: SearchPokemonViewInterface {
+    
+    
     func fetchPokemon() {
         presenter.fetchPokemon(updateUI: { pokemon in
-            //TO DO 
-            print("pokemon: \(pokemon)")
+            self.setupUI(pokemon)
+            
         }) { () -> (Void) in
             
         }
     }
+    
 }
 
 // MARK: - VIPER COMPONENTS API (Auto-generated code)
