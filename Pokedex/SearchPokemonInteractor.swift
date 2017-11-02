@@ -10,6 +10,19 @@ import Foundation
 import Viperit
 
 class SearchPokemonInteractor: Interactor {
+    
+    func getPokemon(id: Int, successBlock: @escaping RequestSuccessBlock, errorBlock:@escaping RequestErrorBlock) {
+        let path = ""
+        ApiManager.sharedInstance.get(path: path.getApiEndpointPath(type: .kAPI_ENDPOINT_GET_POKEMON) + "\(id)", parameters: nil, successBlock: { response in
+            
+            if let response = response {
+                successBlock(response)
+            }
+            
+        }) { error in
+            errorBlock(error)
+        }
+    }
 }
 
 // MARK: - VIPER COMPONENTS API (Auto-generated code)

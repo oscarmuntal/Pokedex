@@ -15,10 +15,24 @@ protocol SearchPokemonViewInterface {
 
 //MARK: SearchPokemonView Class
 final class SearchPokemonView: UserInterface {
+
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchPokemon()
+    }
 }
 
 //MARK: - Public interface
 extension SearchPokemonView: SearchPokemonViewInterface {
+    func fetchPokemon() {
+        presenter.fetchPokemon(updateUI: { pokemon in
+            //TO DO 
+            print("pokemon: \(pokemon)")
+        }) { () -> (Void) in
+            
+        }
+    }
 }
 
 // MARK: - VIPER COMPONENTS API (Auto-generated code)
