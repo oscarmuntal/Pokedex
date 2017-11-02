@@ -9,6 +9,7 @@ target 'Pokedex' do
   pod 'RealmSwift'
   pod 'Alamofire', '~> 4.3'
   pod 'SwiftyJSON'
+  pod 'SDWebImage'
   
   target 'PokedexTests' do
     inherit! :search_paths
